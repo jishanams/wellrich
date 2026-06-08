@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Shopping Cart | Wellrich E-Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pure-white: #ffffff;
+            --off-white: #fbfbfa;
+            --soft-stone: #f3f0ec;
+            --charcoal-soft: #2d312e;
+            --deep-charcoal: #1a1d1b;
+            --terracotta: #d05345;
+            --burnt-clay: #a63f33;
+            --sage-deep: #3b5340;
+            --sage-light: #527359;
+            --sage-bg: #f0f4f1;
+            --text-dark: #222523;
+            --text-muted-light: #616662;
+            --border-light: #e3ded7;
+            --heading-font: 'Cormorant Garamond', serif;
+            --body-font: 'Inter', sans-serif;
+            --card-shadow: 0 15px 35px rgba(59, 83, 64, 0.06), 0 3px 10px rgba(0, 0, 0, 0.02);
+            --card-hover-shadow: 0 25px 45px rgba(59, 83, 64, 0.12);
+        }
+
+        body {
+            background: var(--off-white);
+            color: var(--text-dark);
+            font-family: var(--body-font);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(251, 251, 250, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--sage-deep);
+            text-transform: lowercase;
+        }
+        .logo-text span {
+            color: var(--terracotta);
+            font-style: italic;
+        }
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted-light);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            transition: 0.25s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--sage-light);
+        }
+        .cart-icon {
+            position: relative;
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: var(--terracotta);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cart Page Main Layout */
+        .cart-section {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 32px;
+        }
+        .cart-header {
+            margin-bottom: 40px;
+        }
+        .cart-header h1 {
+            font-family: var(--heading-font);
+            font-size: 2.8rem;
+            color: var(--deep-charcoal);
+            margin-bottom: 8px;
+        }
+        .cart-header p {
+            color: var(--text-muted-light);
+        }
+
+        .cart-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+        }
+
+        /* Cart Items Table */
+        .cart-items {
+            background: var(--pure-white);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-table th {
+            text-align: left;
+            padding: 16px 8px;
+            color: var(--text-muted-light);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .cart-table td {
+            padding: 20px 8px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+        .product-cell {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .product-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            object-fit: cover;
+            background: var(--soft-stone);
+        }
+        .product-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            margin-bottom: 4px;
+        }
+        .product-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted-light);
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border-light);
+            background: var(--pure-white);
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .qty-btn:hover {
+            background: var(--terracotta);
+            color: white;
+            border-color: var(--terracotta);
+        }
+        .qty-value {
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+        .item-price, .item-total {
+            font-weight: 600;
+            color: var(--deep-charcoal);
+        }
+        .remove-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted-light);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .remove-btn:hover {
+            color: var(--terracotta);
+        }
+
+        /* Cart Summary */
+        .cart-summary {
+            background: var(--pure-white);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 100px;
+        }
+        .cart-summary h3 {
+            font-family: var(--heading-font);
+            font-size: 1.6rem;
+            color: var(--deep-charcoal);
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            color: var(--text-muted-light);
+        }
+        .summary-row.total {
+            border-top: 1px solid var(--border-light);
+            margin-top: 12px;
+            padding-top: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--deep-charcoal);
+        }
+        .checkout-btn {
+            width: 100%;
+            background: var(--terracotta);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: all 0.3s;
+        }
+        .checkout-btn:hover {
+            background: var(--burnt-clay);
+            transform: translateY(-2px);
+        }
+        .continue-shopping {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            color: var(--sage-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .continue-shopping:hover {
+            color: var(--terracotta);
+        }
+
+        /* Empty Cart */
+        .empty-cart {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--pure-white);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+        }
+        .empty-cart i {
+            font-size: 80px;
+            color: var(--border-light);
+            margin-bottom: 24px;
+        }
+        .empty-cart h3 {
+            font-family: var(--heading-font);
+            font-size: 1.8rem;
+            color: var(--deep-charcoal);
+            margin-bottom: 12px;
+        }
+        .empty-cart p {
+            color: var(--text-muted-light);
+            margin-bottom: 24px;
+        }
+        .empty-cart .btn-prime {
+            display: inline-flex;
+            padding: 14px 32px;
+            background: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--pure-white);
+            border-top: 1px solid var(--border-light);
+            padding: 60px 32px 30px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        .footer-links a {
+            color: var(--text-muted-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .footer-links a:hover {
+            color: var(--terracotta);
+        }
+
+        @media (max-width: 968px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .cart-table th:nth-child(3), .cart-table td:nth-child(3) {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .product-cell {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cart-table th:nth-child(4), .cart-table td:nth-child(4) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo-area">
+            <div class="logo-text">wellrich<span>purespice</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+            <i class="fa-solid fa-basket-shopping" style="font-size: 1.3rem; color: var(--charcoal-soft);"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </div>
+</header>
+
+<section class="cart-section">
+    <div class="cart-header">
+        <h1>Shopping Cart</h1>
+        <p>Review your items and proceed to checkout</p>
+    </div>
+
+    <div id="cartContainer">
+        <!-- Cart content will be injected here -->
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="logo-text" style="font-size: 1.2rem;">wellrich<span>purespice</span></div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Shipping Info</a>
+        </div>
+        <div style="color: var(--text-muted-light); font-size: 0.8rem;">© 2026 Wellrich E-Store</div>
+    </div>
+</footer>
+
+<script>
+    // Product Data
+    const products = [
+        { id: 1, name: "Premium Chili Powder", price: 175, image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400", discount: 20 },
+        { id: 2, name: "Pure Turmeric Powder", price: 175, image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400", discount: 0 },
+        { id: 3, name: "Kashmiri Spice Mix", price: 175, image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400", discount: 0 },
+        { id: 4, name: "Organic Coriander Powder", price: 175, image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400", discount: 0 },
+        { id: 5, name: "Organic Cumin Powder", price: 165, image: "https://images.unsplash.com/photo-1599210175993-42dd5d8b1d33?auto=format&fit=crop&q=80&w=400", discount: 15 },
+        { id: 6, name: "Premium Cardamom", price: 299, image: "https://images.unsplash.com/photo-1566394424999-71ee3c4e0381?auto=format&fit=crop&q=80&w=400", discount: 0 },
+        { id: 7, name: "Garam Masala Blend", price: 190, image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400", discount: 10 },
+        { id: 8, name: "Black Mustard Seeds", price: 125, image: "https://images.unsplash.com/photo-1573201091248-8ccee017f0b8?auto=format&fit=crop&q=80&w=400", discount: 0 }
+    ];
+
+    // Cart state
+    let cart = [];
+
+    // Load cart from localStorage
+    function loadCart() {
+        const savedCart = localStorage.getItem('wellrichCart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+        } else {
+            // Add some demo items for visual appeal
+            cart = [
+                { productId: 1, quantity: 2, name: "Premium Chili Powder", price: 175, image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" },
+                { productId: 3, quantity: 1, name: "Kashmiri Spice Mix", price: 175, image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" },
+                { productId: 5, quantity: 1, name: "Organic Cumin Powder", price: 165, image: "https://images.unsplash.com/photo-1599210175993-42dd5d8b1d33?auto=format&fit=crop&q=80&w=400" }
+            ];
+            saveCart();
+        }
+        updateCartDisplay();
+    }
+
+    // Save cart to localStorage
+    function saveCart() {
+        localStorage.setItem('wellrichCart', JSON.stringify(cart));
+        updateCartCount();
+    }
+
+    // Update cart count badge
+    function updateCartCount() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountElem = document.getElementById('cartCount');
+        if (cartCountElem) cartCountElem.textContent = totalItems;
+    }
+
+    // Add to cart function (for demo purposes - can be called from product pages)
+    function addToCart(productId, quantity = 1) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+
+        const existingItem = cart.find(item => item.productId === productId);
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({
+                productId: product.id,
+                quantity: quantity,
+                name: product.name,
+                price: product.price,
+                image: product.image
+            });
+        }
+        saveCart();
+        updateCartDisplay();
+    }
+
+    // Update quantity
+    function updateQuantity(productId, newQuantity) {
+        if (newQuantity < 1) {
+            removeItem(productId);
+            return;
+        }
+        const item = cart.find(i => i.productId === productId);
+        if (item) {
+            item.quantity = newQuantity;
+            saveCart();
+            updateCartDisplay();
+        }
+    }
+
+    // Remove item from cart
+    function removeItem(productId) {
+        cart = cart.filter(item => item.productId !== productId);
+        saveCart();
+        updateCartDisplay();
+    }
+
+    // Calculate subtotal
+    function calculateSubtotal() {
+        return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    }
+
+    // Calculate shipping (free over ₹500)
+    function calculateShipping() {
+        const subtotal = calculateSubtotal();
+        return subtotal > 500 ? 0 : 50;
+    }
+
+    // Calculate total
+    function calculateTotal() {
+        return calculateSubtotal() + calculateShipping();
+    }
+
+    // Render cart UI
+    function updateCartDisplay() {
+        const container = document.getElementById('cartContainer');
+        
+        if (!cart.length) {
+            container.innerHTML = `
+                <div class="empty-cart">
+                    <i class="fa-regular fa-basket-shopping"></i>
+                    <h3>Your cart is empty</h3>
+                    <p>Looks like you haven't added any items to your cart yet.</p>
+                    <a href="#" class="btn-prime">Continue Shopping</a>
+                </div>
+            `;
+            return;
+        }
+
+        const subtotal = calculateSubtotal();
+        const shipping = calculateShipping();
+        const total = calculateTotal();
+
+        container.innerHTML = `
+            <div class="cart-grid">
+                <div class="cart-items">
+                    <table class="cart-table">
+                        <thead>
+                            <tr><th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            ${cart.map(item => `
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <img src="${item.image}" alt="${item.name}" class="product-img">
+                                            <div class="product-info">
+                                                <h4>${item.name}</h4>
+                                                <p>Pure & Organic</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="item-price">₹${item.price}</td>
+                                    <td>
+                                        <div class="quantity-control">
+                                            <button class="qty-btn" onclick="updateQuantity(${item.productId}, ${item.quantity - 1})">-</button>
+                                            <span class="qty-value">${item.quantity}</span>
+                                            <button class="qty-btn" onclick="updateQuantity(${item.productId}, ${item.quantity + 1})">+</button>
+                                        </div>
+                                    </td>
+                                    <td class="item-total">₹${item.price * item.quantity}</td>
+                                    <td><button class="remove-btn" onclick="removeItem(${item.productId})"><i class="fa-regular fa-trash-can"></i></button></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>₹${subtotal}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>${shipping === 0 ? 'Free' : '₹' + shipping}</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>₹${total}</span>
+                    </div>
+                    <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+                    <a href="#" class="continue-shopping">← Continue Shopping</a>
+                </div>
+            </div>
+        `;
+    }
+
+    // Checkout function
+    function proceedToCheckout() {
+        alert('Thank you for shopping with Wellrich!\n\nOrder Total: ₹' + calculateTotal() + '\n\nThis is a demo. In a real store, you would proceed to payment gateway.');
+    }
+
+    // Initialize cart
+    loadCart();
+
+    // Make functions global for onclick
+    window.updateQuantity = updateQuantity;
+    window.removeItem = removeItem;
+    window.addToCart = addToCart;
+    window.proceedToCheckout = proceedToCheckout;
+</script>
+
+</body>
+</html>

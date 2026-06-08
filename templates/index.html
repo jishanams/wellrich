@@ -1,0 +1,558 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Wellrich E-Store | Bringing Nature to Your Table Official Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="/" class="logo-area">
+            <!-- Logo Image - Place your logo file at static/Images/Wellrich Logo.png -->
+            <img src="{% static 'Images/Well Rich Logo.png' %}" alt="Wellrich Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-text" style="display: none;">wellrich<span>purespice</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Shop by Category</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="header-utility">
+            <a href="#" class="utility-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#" class="utility-icon"><i class="fa-regular fa-heart"></i></a>
+            <a href="#" class="utility-icon"><i class="fa-solid fa-basket-shopping"></i><span class="cart-badge">0</span></a>
+        </div>
+    </div>
+</header>
+
+{% load static %}
+
+<section class="hero-banner">
+
+    <!-- Background Image -->
+    <img src="{% static 'Images/banner.png' %}" alt="Pure Spice Banner" class="hero-bg">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+
+        <h2 class="reveal r1 small-title">
+            Proud to buy our product, because you are choosing to protect your own life
+        </h2>
+
+        <h1 class="reveal r2 big-title">
+            The reports are alarming chemicalised curry powders are
+            entering our kitchens, and the silence around it is even
+            more dangerous
+        </h1>
+
+        <div class="hero-actions reveal r5">
+            <a href="#" class="btn-prime">
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+  </div>
+</section>
+<section class="initiative-section">
+    <div class="center-heading">
+        <h2>Our Core Initiative</h2>
+        <p>Our intention is not only to reduce the risk of cancer caused by adulterated and chemical-laden foods, but also to build 
+a healthier and more conscious community. By providing pure, natural, and clean products, we help families shift 
+toward a safer lifestyle.Through this initiative, we continue our commitment to creating a society that is:</p>
+    </div>
+    <div class="four-cols-grid">
+
+    <div class="initiative-item">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Healthier</h3>
+    </div>
+
+    <div class="initiative-item">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>More Aware</h3>
+    </div>
+
+    <div class="initiative-item">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Connected to Nature</h3>
+    </div>
+
+    <div class="initiative-item">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Compassionate</h3>
+    </div>
+
+</div>
+</section>
+
+<section>
+    <div class="showcase-header">
+        <h2>Featured Products</h2>
+        <p style="color: var(--text-muted-light); font-size: 1.1rem;">Hand-selected unadulterated freshness, delivered directly.</p>
+    </div>
+    <div class="product-matrix-grid">
+        <div class="modern-product-card"><span class="discount-tag">20% OFF</span><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili"></div><div class="item-nomenclature">Premium Chili Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric"></div><div class="item-nomenclature">Pure Turmeric Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri"></div><div class="item-nomenclature">Kashmiri Spice Mix</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander"></div><div class="item-nomenclature">Organic Coriander Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+         <div class="modern-product-card"><span class="discount-tag">20% OFF</span><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili"></div><div class="item-nomenclature">Premium Chili Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric"></div><div class="item-nomenclature">Pure Turmeric Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri"></div><div class="item-nomenclature">Kashmiri Spice Mix</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander"></div><div class="item-nomenclature">Organic Coriander Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+    </div>
+    <div class="pagination-center" style="text-align:center; margin-bottom:100px;">
+        <button class="btn-secondary" style="padding:15px 55px;">Load more Products</button>
+    </div>
+</section>
+<section class="testimonial-section">
+  <div class="center-heading">
+    <h2>What Our Customers Say</h2>
+    <p>Real feedback from families choosing a healthier lifestyle</p>
+  </div>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <img src="{% static 'Images/image.png' %}" alt="Anjali Nair" class="testimonial-photo">
+      <p>"After switching to PURESPICE, the taste difference is unbelievable. It feels clean and natural."</p>
+      <h4>Anjali Nair</h4>
+      <span>Home Chef</span>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="{% static 'Images/image.png' %}" alt="Rahul Menon" class="testimonial-photo">
+      <p>"Finally, spices I can trust. My whole family feels the difference in our food quality."</p>
+      <h4>Rahul Menon</h4>
+      <span>Health Enthusiast</span>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="{% static 'Images/image.png' %}" alt="Suresh Kumar" class="testimonial-photo">
+      <p>"The purity and aroma are unmatched. This is how real spices should be."</p>
+      <h4>Suresh Kumar</h4>
+      <span>Regular Customer</span>
+    </div>
+
+  </div>
+</section>
+<section class="about-split-section">
+    <div class="about-container">
+        <div class="about-images-composite">
+            <div class="img-block-wrapper img-primary-frame"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=600" alt="Spice blend"></div>
+            <div class="img-block-wrapper img-secondary-frame"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=600" alt="Pure turmeric"></div>
+        </div>
+        <div class="about-content-panel">
+            <span class="about-section-tag">// About Us <i class="fa-solid fa-leaf"></i></span>
+            <h2>Wellrich – Bringing <br><span>Nature to Your Table.</span></h2>
+            <p class="hero-narrative-lead">Our intention is not only to reduce the risk caused by adulterated foods, but to build a healthier, conscious community.</p>
+            <p class="hero-narrative-body">Wellrich Agrotech LLP is an urban farming–focused company, registered 
+on December 25, 2019, in Bangalore. The company specializes in 
+producing flowering plants, vegetable saplings, fruit saplings, and a wide 
+range of garden saplings, all cultivated in innovative self-watering pots.
+Wellrich Agrotech has been actively supplying premium-quality plants to 
+villas, gated communities, apartments, flats, and individual homes across 
+Bangalore, helping customers create sustainable home gardens with 
+ease.
+Many of our customers have shifted away from toxin-filled vegetables and 
+started growing their own purely organic vegetables, kitchen herbs, and 
+fruits with the help of our easy, self-watering system</p>
+            <a href="#" class="btn-prime">Learn Our Story</a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="purpose-section">
+
+    <div class="purpose-content">
+
+        <span class="section-tag">
+            <i class="fa-solid fa-leaf"></i> OUR MISSION
+        </span>
+
+        <h2>
+           By choosing natural products, you support your health, promote clean and wholesome food, and strengthen the livelihoods of your own people.
+            
+        </h2>
+
+        <p>
+           For many, what started as a small interest has now grown into a beautiful 
+hobby of gardening and urban farming. Our simple, low-maintenance 
+system (watering only once in 15 days) makes it possible for anyone to 
+grow healthy plants, even with a busy schedule.
+        </p>
+
+        <p>
+            We use our own in-house bio-fertilizer and bio-products, ensuring that 
+every plant grown through our system is 100% natural, safe, and organic.
+By developing and using these biological inputs, we maintain soil health, 
+boost plant growth, and eliminate the need for harmful chemical 
+fertilizers.
+        </p>
+        <p>This strengthens our mission of creating a healthier society by:</p>
+
+        <div class="purpose-highlights">
+
+            <div class="highlight-item">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Providing clean, organic produce</span>
+            </div>
+
+            <div class="highlight-item">
+                <i class="fa-solid fa-droplet"></i>
+                <span>Protecting the environment</span>
+            </div>
+
+            <div class="highlight-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>Encouraging sustainable urban farming</span>
+            </div>
+
+            <div class="highlight-item">
+                <i class="fa-solid fa-earth-asia"></i>
+                <span>Supporting a toxin-free lifestyle</span>
+            </div>
+
+        </div>
+        <p>Our bio-system, combined with our self-watering pots, makes gardening 
+effortless and completely eco-friendly—perfect for villas, apartments, and 
+modern urban homes.</p>
+
+    </div>
+
+    <div class="purpose-card">
+
+        <div class="purpose-card-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <h3>Our Mission</h3>
+
+        <p>
+           By choosing natural products,
+you support your health…
+you support clean food…
+and you support your own people
+        </p>
+
+        <a href="#" class="btn-prime">
+            Learn More
+        </a>
+
+    </div>
+
+</section>
+
+<section class="deal-banner">
+    <div class="deal-overlay"></div>
+
+    <div class="deal-content">
+        <span class="deal-tag">Special Offer</span>
+
+        <h2>DEAL OF THE DAY</h2>
+
+        <p>
+            Experience the richness of pure spices,
+            crafted naturally for healthier cooking.
+        </p>
+
+        <div class="countdown-box">
+            <div class="time-item">
+                <span>06</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="time-item">
+                <span>35</span>
+                <small>MINS</small>
+            </div>
+
+            <div class="time-item">
+                <span>30</span>
+                <small>SECS</small>
+            </div>
+        </div>
+
+        <a href="#" class="deal-btn">
+            SHOP NOW
+        </a>
+    </div>
+</section>
+
+
+<section class="how-it-works-section">
+
+    <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2>Food Is An Important Part Of A Balanced Diet</h2>
+        
+    </div>
+
+    <div class="process-wrapper">
+
+        <!-- Step 1 -->
+        <div class="process-card">
+            <div class="process-image">
+                <img src="{% static 'Images/image.png' %}" alt="Choose">
+            </div>
+            <h3>Choose</h3>
+            <p>
+                Do you want to lose weight, exercise,
+adhere to a therapeutic diet? Our
+dietitian will help you with choosing the
+right program!
+            </p>
+        </div>
+
+        <!-- Arrow -->
+        <div class="process-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-card featured">
+            <div class="process-image">
+                <img src="{% static 'Images/banner.png' %}" alt="Customized Powder">
+            </div>
+            <h3>Customized Powder</h3>
+            <p>
+                Do you want to lose weight, exercise,
+adhere to a therapeutic diet? Our
+dietitian will help you with choosing the
+right program!
+            </p>
+        </div>
+
+        <!-- Arrow -->
+        <div class="process-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-card">
+            <div class="process-image">
+                <img src="{% static 'Images/packet.jpg' %}" alt="Deliver">
+            </div>
+            <h3>Deliver</h3>
+            <p>
+                Do you want to lose weight, exercise,
+adhere to a therapeutic diet? Our
+dietitian will help you with choosing the
+right program!
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-quad-grid">
+
+        <!-- Logo Section -->
+        <div class="footer-column-pack">
+
+            <div class="footer-logo-area">
+
+                <img src="{% static 'Images/footer.png' %}"
+                     alt="Wellrich Logo"
+                     class="footer-logo-img"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+                <div class="footer-logo-text" style="display:none;">
+                    wellrich<span>purespice</span>
+                </div>
+
+                <p>
+                    Bringing Nature to Your Table with uncompromising
+                    transparency and sustainable initiatives.
+                </p>
+
+            </div>
+
+            <div class="social-icons-row">
+
+                <a href="https://facebook.com" target="_blank" class="social-icon-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://instagram.com" target="_blank" class="social-icon-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://youtube.com" target="_blank" class="social-icon-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Quick Links + Contact -->
+        <div class="footer-column-pack">
+
+            <h5>Quick Links</h5>
+
+            <ul>
+                <li><a href="#">Home Navigation</a></li>
+                <li><a href="#">About Identity</a></li>
+                <li><a href="#">Product Catalog</a></li>
+                <li><a href="#">Custom Powder Portal</a></li>
+            </ul>
+
+            <div style="margin-top:40px;">
+
+                <h5>Contact Us</h5>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        wecare@wellrichagrotech.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        info@wellrichagrotech.com
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-globe"></i>
+                        www.wellrichagrotech.com
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Manufacturer -->
+        <div class="footer-column-pack">
+
+            <h5>Manufacturer</h5>
+
+            <ul>
+                <li>
+                    <strong>MANUFACTURED & MARKETED BY</strong>
+                </li>
+
+                <li>Wellrich Agrotech</li>
+
+                <li>
+                    First Floor, 123-B, Malankara,
+                    Chulliyod Road
+                </li>
+
+                <li>
+                    Nenmeni Village,
+                    Sulthan Bathery
+                </li>
+
+                <li>
+                    Wayanad – 673592,
+                    Kerala, India
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 94965 52200
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- Subscribe -->
+        <div class="footer-column-pack">
+
+            <div class="newsletter-embedded-box">
+
+                <h5>Subscribe</h5>
+
+                <p>
+                    Get health warnings &
+                    discount structures.
+                </p>
+
+                <input
+                    type="email"
+                    placeholder="Your email address">
+
+                <button>
+                    SUBSCRIBE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+
+    <div class="footer-base-terminal">
+
+        <div>
+            © 2026 Wellrich E-Store.
+            All rights reserved.
+        </div>
+
+        <div class="legal-anchor-pool">
+
+            <a href="#">Conditions of Use</a>
+
+            <a href="#">Privacy Notes</a>
+
+            <a href="#">Your Ads Privacy Choices</a>
+
+        </div>
+
+    </div>
+
+</footer>
+<script>
+    // Simple fallback: if logo image fails to load, show text logo
+    document.addEventListener('DOMContentLoaded', function() {
+        const headerLogoImg = document.querySelector('.logo-img');
+        const headerLogoText = document.querySelector('.logo-text');
+        if (headerLogoImg && headerLogoImg.complete && headerLogoImg.naturalWidth === 0) {
+            headerLogoImg.style.display = 'none';
+            if (headerLogoText) headerLogoText.style.display = 'flex';
+        }
+        if (headerLogoImg) {
+            headerLogoImg.addEventListener('error', function() {
+                headerLogoImg.style.display = 'none';
+                if (headerLogoText) headerLogoText.style.display = 'flex';
+            });
+        }
+        
+        const footerLogoImg = document.querySelector('.footer-logo-img');
+        const footerLogoText = document.querySelector('.footer-logo-text');
+        if (footerLogoImg && footerLogoImg.complete && footerLogoImg.naturalWidth === 0) {
+            footerLogoImg.style.display = 'none';
+            if (footerLogoText) footerLogoText.style.display = 'block';
+        }
+        if (footerLogoImg) {
+            footerLogoImg.addEventListener('error', function() {
+                footerLogoImg.style.display = 'none';
+                if (footerLogoText) footerLogoText.style.display = 'block';
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
