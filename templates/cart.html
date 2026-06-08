@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -380,8 +381,10 @@
 
 <header>
     <div class="nav-container">
-        <a href="#" class="logo-area">
-            <div class="logo-text">wellrich<span>purespice</span></div>
+        <a href="/" class="logo-area">
+            <!-- Logo Image - Place your logo file at static/Images/Wellrich Logo.png -->
+            <img src="{% static 'Images/Well Rich Logo.png' %}" alt="Wellrich Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="logo-text" style="display: none;">wellrich<span>purespice</span></div>
         </a>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>

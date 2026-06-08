@@ -103,14 +103,79 @@ toward a safer lifestyle.Through this initiative, we continue our commitment to 
         <p style="color: var(--text-muted-light); font-size: 1.1rem;">Hand-selected unadulterated freshness, delivered directly.</p>
     </div>
     <div class="product-matrix-grid">
-        <div class="modern-product-card"><span class="discount-tag">20% OFF</span><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili"></div><div class="item-nomenclature">Premium Chili Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric"></div><div class="item-nomenclature">Pure Turmeric Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri"></div><div class="item-nomenclature">Kashmiri Spice Mix</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander"></div><div class="item-nomenclature">Organic Coriander Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-         <div class="modern-product-card"><span class="discount-tag">20% OFF</span><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili"></div><div class="item-nomenclature">Premium Chili Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric"></div><div class="item-nomenclature">Pure Turmeric Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri"></div><div class="item-nomenclature">Kashmiri Spice Mix</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
-        <div class="modern-product-card"><div class="frame-display-box"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander"></div><div class="item-nomenclature">Organic Coriander Powder</div><div class="item-valuation">₹175.00</div><button class="btn-card-checkout">Add to cart</button></div>
+        <div class="modern-product-card">
+    <span class="discount-tag">20% OFF</span>
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili">
+    </div>
+    <div class="item-nomenclature">Premium Chili Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric">
+    </div>
+    <div class="item-nomenclature">Pure Turmeric Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri">
+    </div>
+    <div class="item-nomenclature">Kashmiri Spice Mix</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander">
+    </div>
+    <div class="item-nomenclature">Organic Coriander Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <span class="discount-tag">20% OFF</span>
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=400" alt="chili">
+    </div>
+    <div class="item-nomenclature">Premium Chili Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=400" alt="turmeric">
+    </div>
+    <div class="item-nomenclature">Pure Turmeric Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=400" alt="kashmiri">
+    </div>
+    <div class="item-nomenclature">Kashmiri Spice Mix</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
+
+<div class="modern-product-card">
+    <div class="frame-display-box">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="coriander">
+    </div>
+    <div class="item-nomenclature">Organic Coriander Powder</div>
+    <div class="item-valuation">₹175.00</div>
+    <button class="btn-card-checkout" onclick="window.location.href='{% url 'cart' %}'">Add to cart</button>
+</div>
     </div>
     <div class="pagination-center" style="text-align:center; margin-bottom:100px;">
         <button class="btn-secondary" style="padding:15px 55px;">Load more Products</button>
